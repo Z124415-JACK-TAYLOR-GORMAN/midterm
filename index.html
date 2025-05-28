@@ -2,21 +2,213 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>GitHub Pages Test</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jack Gorman Portfolio</title>
   <style>
-    body {
-      font-family: sans-serif;
-      background-color: #f2f2f2;
-      text-align: center;
-      padding-top: 100px;
+    /* Ensure the body and html take full height */
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden; /* Prevent scrolling for the entire body */
+      font-family: 'Arial', sans-serif; /* Use a blockier font */
     }
+
+    /* Set the Three.js canvas to fill the whole screen */
+    canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1; /* Ensure it is behind other content */
+    }
+
+    /* Container for the content (text) */
+    .container {
+      position: relative;
+      z-index: 1; /* Ensure content appears above the canvas */
+      padding: 20px;
+      color: #333;
+      overflow-y: auto; /* Allow scrolling if content exceeds screen size */
+      height: 100vh; /* Ensure container takes full viewport height */
+    }
+
+    /* Portfolio Title styles */
     h1 {
-      color: #4CAF50;
+      font-size: 3rem;
+      color: black; /* Text color black */
+      text-align: left;
+      font-weight: bold;
+      text-shadow: 
+        0 0 5px white,    /* hard white stroke */
+        0 0 10px white,   
+        0 0 15px white, 
+        0 0 20px white;
+      font-family: 'Impact', sans-serif; /* Blockier font */
+      margin-top: 20px;
+    }
+
+    /* Subtitle styles */
+    h2 {
+      font-size: 2rem;
+      color: black; /* Text color black */
+      text-align: left;
+      font-weight: bold;
+      text-shadow: 
+        0 0 5px white,    /* hard white stroke */
+        0 0 10px white,   
+        0 0 15px white, 
+        0 0 20px white;
+      font-family: 'Impact', sans-serif; /* Blockier font */
+      margin-top: 40px;
+    }
+
+    /* Text styling for all text */
+    p, ul {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: black; /* Black text color */
+      font-family: 'Arial', sans-serif; /* Blockier font */
+      text-shadow: 
+        0 0 5px white,    /* hard white stroke */
+        0 0 10px white,   
+        0 0 15px white, 
+        0 0 20px white;
+    }
+
+    /* Project styles */
+    .project {
+      display: flex;
+      justify-content: space-between; /* Space between text and image */
+      margin-bottom: 40px;
+      flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    }
+
+    /* Project text block */
+    .project-text {
+      flex: 1;
+      padding-right: 20px; /* Space between text and image */
+    }
+
+    /* Image styles */
+    .project img {
+      width: 100%;
+      max-width: 400px; /* Limit image size */
+      height: auto;
+      display: block;
+      margin-top: 20px;
+    }
+
+    /* Key Features and Technology styles */
+    .key-features ul {
+      list-style-type: disc;
+      margin-left: 20px;
+    }
+
+    .key-features li {
+      margin-bottom: 10px;
+    }
+
+    .technology {
+      margin-top: 10px;
+      font-style: italic;
+      color: #666;
+    }
+
+    /* Media Query for small screens */
+    @media (max-width: 768px) {
+      .project {
+        flex-direction: column; /* Stack the content on smaller screens */
+        align-items: center;
+      }
+
+      .project-text {
+        padding-right: 0; /* Remove padding on small screens */
+        text-align: center; /* Center-align text */
+      }
+
+      .project img {
+        margin-top: 20px;
+        max-width: 100%; /* Make image responsive */
+      }
     }
   </style>
 </head>
 <body>
-  <h1>GitHub Pages is Working!</h1>
-  <p>If you can see this page, your GitHub Pages setup is correct.</p>
+  <!-- Include Three.js from CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
+
+  <!-- Include your custom JavaScript -->
+  <script src="app.js"></script>
+
+  <div class="container">
+    <!-- Portfolio Header -->
+    <h1>Jack Gorman Portfolio</h1>
+
+    <div class="project">
+      <div class="project-text">
+        <h2>1. Automatic YouTube Content Creation & Optimization App</h2>
+        <p><strong>Overview:</strong> This app automates the process of uploading vertical format videos to YouTube, transforming long-form content into engaging short clips. It also incorporates a unique attention-grabbing ADHD filler at the bottom to captivate viewers' attention in today’s fast-paced digital environment. Perfect for content creators looking to optimize their workflows and reach a wider audience through quick, digestible content.</p>
+        
+        <div class="key-features">
+          <strong>Key Features:</strong>
+          <ul>
+            <li><strong>Automated Video Uploads:</strong> Seamlessly upload videos in vertical format optimized for mobile devices.</li>
+            <li><strong>ADHD Attention Filler:</strong> Filler content added designed to keep viewers engaged and focused.</li>
+          </ul>
+        </div>
+
+        <div class="technology">
+          <strong>Technology Used:</strong> Scraping, Video Processing, Botnets, Docker, Custom API Integration to bypass upload limits, Python
+        </div>
+      </div>
+
+      <img src="image1.jpg" alt="Automatic YouTube Content Creation & Optimization App">
+    </div>
+
+    <div class="project">
+      <div class="project-text">
+        <h2>2. Phone Accelerometer for Mouse Control</h2>
+        <p><strong>Overview:</strong> This project uses a phone accelerometer to track and mimic mouse movements, enabling users to control their computer with mouse gestures. While the technology is still in development, it explores new possibilities in human-computer interaction and accessibility.</p>
+
+        <div class="key-features">
+          <strong>Key Features:</strong>
+          <ul>
+            <li><strong>Convenient Control:</strong> Use subtle mouse movements to navigate and interact with your computer.</li>
+            <li><strong>Ongoing Development:</strong> Continuously improving accuracy and responsiveness to ensure optimal user experience.</li>
+          </ul>
+        </div>
+
+        <div class="technology">
+          <strong>Technology Used:</strong> Accelerometer Sensors, Machine Learning, Kotlin, Python, Data Gathering
+        </div>
+      </div>
+
+      <img src="image2.jpg" alt="Phone Accelerometer for Mouse Control">
+    </div>
+
+    <div class="project">
+      <div class="project-text">
+        <h2>3. AI-Generated Music for Enhanced Audiobooks</h2>
+        <p><strong>Overview:</strong> This project enhances the audiobook experience by pairing each chapter, verse, or even entire books with AI-generated background music tailored to the emotional tone of the text. Currently applied to the Bible, this project aims to improve accessibility for people across different languages and cultures. The music adapts to the emotional highs and lows of the content, offering a more immersive and engaging listening experience.</p>
+
+        <div class="key-features">
+          <strong>Key Features:</strong>
+          <ul>
+            <li><strong>Emotion-Driven Music Composition:</strong> AI generates music that aligns with the emotional undertones of the content.</li>
+            <li><strong>Immersive Audiobook Experience:</strong> Offers a dynamic listening environment for better engagement and comprehension.</li>
+            <li><strong>Multilingual Accessibility:</strong> Focuses on providing enriched Bible experiences in multiple languages.</li>
+          </ul>
+        </div>
+
+        <div class="technology">
+          <strong>Technology Used:</strong> Natural Language Processing (NLP), AI Music Generation, Emotion Detection, automated uploading
+        </div>
+      </div>
+
+      <img src="image3.jpg" alt="AI-Generated Music for Enhanced Audiobooks">
+    </div>
+  </div>
 </body>
 </html>
